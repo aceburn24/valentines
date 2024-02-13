@@ -34,7 +34,7 @@ noButton.addEventListener('click', function() {
 });
 
 yesButton.addEventListener('click', function() {
-    document.getElementById('message').innerHTML = "Waa I love you lalab ko";
+    document.getElementById('message').innerHTML = "Waa I love you lalab ko thank you and Happy Valentines day! 😘";
     document.getElementById('bgVideo').style.display = 'block';
     document.getElementById('gif').src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
 

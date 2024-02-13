@@ -44,25 +44,12 @@ button:hover {
 #message {
     margin-top: 20px;
     font-size: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
 }
-
 
 #bgVideo {
     display: none; /* Video is hidden initially */
     max-width: 560px; /* Maximum width */
     border: none; /* Remove border */
     margin-top: 20px; /* Space from the buttons */
-}
-
-@media (max-width: 600px) {
-    button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
-    #message {
-        font-size: 18px;
-    }
 }
 

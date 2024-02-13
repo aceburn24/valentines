@@ -8,8 +8,11 @@ let messages = [
 ];
 
 let messageIndex = 0;
+let scaleFactor = 1; // Initialize scale factor
+let yesButton = document.getElementById('yesBtn');
+let noButton = document.getElementById('noBtn');
 
-document.getElementById('noBtn').addEventListener('click', function() {
+noButton.addEventListener('click', function() {
     let messageElement = document.getElementById('message');
     messageElement.style.opacity = '0';
     setTimeout(function() {
@@ -20,16 +23,23 @@ document.getElementById('noBtn').addEventListener('click', function() {
             messageIndex = 0;
         }
     }, 500);
-    // Add the GIF when 'No' is clicked
     document.getElementById('gif').src = "https://media1.tenor.com/m/XUsA6TGlwZ4AAAAC/bebi-jem.gif";
+
+    // Increase the size of the 'Yes' button
+    scaleFactor += 0.1; // Increase scale factor
+    yesButton.style.transform = 'scale(' + scaleFactor + ')';
+
+    // Move the 'No' button to evade the enlarging 'Yes' button
+    noButton.style.transform = `translateX(${scaleFactor * 50}px)`; // Adjust the value to ensure enough space
 });
 
-
-document.getElementById('yesBtn').addEventListener('click', function() {
-    document.getElementById('message').innerHTML = "Waa I love you lalab ko"; // Display a loving message
-    document.getElementById('bgVideo').style.display = 'block'; // Show the video
-    // Add the GIF when 'Yes' is clicked
+yesButton.addEventListener('click', function() {
+    document.getElementById('message').innerHTML = "Waa I love you lalab ko";
+    document.getElementById('bgVideo').style.display = 'block';
     document.getElementById('gif').src = "https://media.tenor.com/gUiu1zyxfzYAAAAi/bear-kiss-bear-kisses.gif";
+
+    // Reset the size of the 'Yes' button
+    scaleFactor = 1;
+    yesButton.style.transform = 'scale(1)';
+    noButton.style.transform = 'translateX(0px)'; // Reset the position of the 'No' button
 });
-
-
